@@ -1,5 +1,6 @@
 import Creatures.Cleric;
 import Creatures.Warrior;
+import Tools.Gems;
 import Tools.HealingTools;
 import Tools.WeaponsSpells;
 import org.junit.Before;
@@ -11,12 +12,12 @@ public class ClericTest {
 
     Cleric cleric;
     Warrior warrior;
+    Gems gems;
 
     @Before
     public void setUp() {
         cleric = new Cleric("Cleric", 100, HealingTools.POTION);
         warrior = new Warrior("Weapon", 100, WeaponsSpells.AXE, "Dwarf", 2);
-
 
     }
 
@@ -65,5 +66,11 @@ public class ClericTest {
         cleric.healing(HealingTools.POTION, warrior);
         assertEquals(105, warrior.getHealthPoints());
 
+    }
+
+    @Test
+    public void hasGems(){
+        cleric.addGems(Gems.DIAMOND);
+        assertEquals(1, cleric.countGems());
     }
 }

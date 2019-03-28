@@ -1,14 +1,18 @@
 package Creatures;
 
+import Tools.Gems;
 import Tools.HealingTools;
-import Tools.WeaponsSpells;
+
+import java.util.ArrayList;
 
 public class Cleric implements IDamage{
 
 private String name;
 private int healthPoints;
 private HealingTools healingTools;
+private ArrayList<Gems> gems;
 Warrior warrior;
+
 
 
 
@@ -16,6 +20,7 @@ public Cleric(String name, int healthPoints, HealingTools healingTools){
     this.name = name;
     this.healthPoints = healthPoints;
     this.healingTools = healingTools;
+    this.gems = new ArrayList<Gems>();
 }
 
     public String getName() {
@@ -51,5 +56,27 @@ public Cleric(String name, int healthPoints, HealingTools healingTools){
         warrior.setHealthPoints(healthPoints += this.healingTools.getHealingPoints());
 
 }
+
+    public Warrior getWarrior() {
+        return warrior;
+    }
+
+    public void setWarrior(Warrior warrior) {
+        this.warrior = warrior;
+    }
+
+    public ArrayList<Gems> getGems() {
+        return gems;
+    }
+
+
+    public void addGems(Gems gem){
+        this.gems.add(gem);
+    }
+
+    public int countGems(){
+        return this.gems.size();
+    }
+
 }
 

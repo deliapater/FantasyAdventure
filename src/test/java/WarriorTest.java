@@ -1,5 +1,6 @@
 import Creatures.Creature;
 import Creatures.Warrior;
+import Tools.Gems;
 import Tools.WeaponsSpells;
 import org.junit.Before;
 import org.junit.Test;
@@ -74,13 +75,19 @@ public class WarriorTest {
 
         @Test
         public void hasArmour() {
-                assertEquals(100, warrior.getArmour());
+                assertEquals(2, warrior.getArmour());
         }
 
         @Test
         public void canSetArmour() {
                 warrior.setArmour(150);
                 assertEquals(150, warrior.getArmour());
+        }
+
+        @Test
+        public void hasGems(){
+                warrior.addGems(Gems.DIAMOND);
+                assertEquals(1, warrior.countGems());
         }
     }
 

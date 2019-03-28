@@ -1,5 +1,6 @@
 import Creatures.Creature;
 import Creatures.Magician;
+import Tools.Gems;
 import Tools.WeaponsSpells;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,6 +13,7 @@ public class MagicianTest {
         public Creature creature;
         public WeaponsSpells weaponsSpells;
         public Magician magician;
+        Gems gems;
 
         @Before
         public void setUp() {
@@ -93,7 +95,12 @@ public class MagicianTest {
             magician.setMythicalCreatureBonus(5);
             assertEquals(5, magician.getMythicalCreatureBonus());
 
+    }
 
+    @Test
+    public void hasGems(){
+        magician.addGems(Gems.DIAMOND);
+        assertEquals(1, magician.countGems());
     }
 }
 
