@@ -16,7 +16,7 @@ public class WarriorTest {
         @Before
         public void setUp() {
 
-            warrior = new Warrior("Weapon", 100, WeaponsSpells.AXE, "Dwarf", 100);
+            warrior = new Warrior("Weapon", 100, WeaponsSpells.AXE, "Dwarf", 2);
 
         }
         @Test
@@ -43,7 +43,10 @@ public class WarriorTest {
         }
 
         @Test
-        public void
+        public void canHaveDamage(){
+                warrior.damage(20);
+                assertEquals(80, warrior.getHealthPoints());
+        }
 
         @Test
         public void hasWeaponsSpells() {

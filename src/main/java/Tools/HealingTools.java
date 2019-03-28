@@ -1,6 +1,6 @@
 package Tools;
 
-public enum healingTools {
+public enum HealingTools {
 
     POTION(5),
     HERBS(8),
@@ -8,7 +8,11 @@ public enum healingTools {
 
     private final int healingPoints;
 
-    healingTools(int healingPoints){
+    HealingTools(int healingPoints){
         this.healingPoints = healingPoints;
+    }
+
+    public int getHealingPoints() {
+        return healingPoints;
     }
 }

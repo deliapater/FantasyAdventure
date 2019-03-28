@@ -2,7 +2,7 @@ package Creatures;
 
 import Tools.WeaponsSpells;
 
-public abstract class Creature {
+public abstract class Creature implements IDamage {
     private String type;
     private int healthPoints;
     private WeaponsSpells weaponsSpells;
@@ -36,5 +36,10 @@ public abstract class Creature {
     public void setWeaponsSpells(WeaponsSpells weaponsSpells) {
         this.weaponsSpells = weaponsSpells;
     }
+
+    public int damage(int damage){
+        return this.healthPoints -= damage;
+    }
+
 
 }
